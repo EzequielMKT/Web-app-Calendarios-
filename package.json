@@ -1,0 +1,14 @@
+{
+  "name": "portal-de-aulas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js && node --check scripts/add-content.js",
+    "content": "node scripts/add-content.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
