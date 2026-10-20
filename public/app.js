@@ -15,14 +15,20 @@ function render() {
     empty.append(title, p); $('#cards').append(empty);
   }
   matches.forEach(item => {
-    const card = document.createElement('article'); card.className = `card ${item.type}`;
+    const card = document.createElement('article'); card.className = `card ${item.type}${item.locked ? " locked" : ""}`;
     card.innerHTML = '<div class="cover" aria-hidden="true"></div><div class="card-body"><span class="tag"></span><h3></h3><p></p><div class="actions"><button class="open"></button></div></div>';
-    card.querySelector('.cover').textContent = item.type === 'pdf' ? 'PDF ↗' : '▶';
+    card.querySelector('.cover').textContent = item.locked ? '🔒' : item.type === 'pdf' ? 'PDF ↗' : '▶';
     card.querySelector('.tag').textContent = item.module;
     card.querySelector('h3').textContent = item.title;
     card.querySelector('p').textContent = item.description || (item.type === 'pdf' ? 'Material de apoyo en PDF' : 'Aprende con esta videoclase');
-    const open = card.querySelector('.open'); open.textContent = item.type === 'pdf' ? 'Abrir material ↗' : 'Ver clase ↗';
+    const open = card.querySelector('.open'); open.textContent = item.locked ? (item.plan === 'diamante' ? '🔒 Plan Diamante' : '🔒 Acceso completo') : item.type === 'pdf' ? 'Abrir material ↗' : 'Ver clase ↗';
     open.onclick = () => {
+      if (item.locked) {
+        $('#access-title').textContent = item.plan === 'diamante' ? 'Exclusivo del Plan Diamante' : 'Desbloquea el resto de los materiales';
+        $('#access-message').textContent = item.plan === 'diamante' ? 'La videoclase está disponible únicamente para quienes pagan el Plan Diamante.' : 'Realiza el pago para acceder al resto de los materiales.';
+        $('#access-dialog').showModal();
+        return;
+      }
       if (item.type === 'pdf') { window.open(safeUrl(item.url), '_blank', 'noopener,noreferrer'); return; }
       const iframe = document.createElement('iframe');
       const source = new URL(item.url);
@@ -52,11 +58,12 @@ document.querySelectorAll('[data-filter]').forEach(b => b.onclick = () => { filt
     if (!Array.isArray(catalog)) throw new Error('Catálogo inválido');
     items = catalog.map(item => {
       if (!['pdf', 'video'].includes(item.type) || typeof item.title !== 'string' || typeof item.module !== 'string') throw new Error('Contenido inválido');
+      if (item.locked) return { ...item, url: undefined };
       if (item.type === 'video') youtubeId(item.url);
       return { ...item, url: safeUrl(item.url) };
     });
     [...new Set(items.map(i => i.module))].sort().forEach(m => $('#module').add(new Option(m, m)));
-    $('#count').textContent = `${items.length} contenidos para explorar a tu ritmo.`;
+    $('#count').textContent = '50 calendarios · 10 disponibles y 40 bloqueados · Videoclase exclusiva del Plan Diamante';
     render();
   } catch { $('#status').textContent = 'No se pudo cargar la biblioteca. Inténtalo de nuevo más tarde.'; }
 })();
@@ -74,3 +81,5 @@ function youtubeId(value) {
 }
 $('#close-player').onclick = () => $('#player-dialog').close();
 $('#player-dialog').addEventListener('close', () => $('#player').replaceChildren());
+
+$('#close-access').onclick = () => $('#access-dialog').close();

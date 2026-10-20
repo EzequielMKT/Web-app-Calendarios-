@@ -25,3 +25,9 @@ No se incluyen aulas ficticias. El catálogo inicial está vacío. Las fuentes d
 ## Compartir
 
 La aplicación necesita alojamiento con una URL pública para que otras personas puedan acceder. Puede ejecutarse con Node.js o publicarse la carpeta `public` en un alojamiento estático HTTPS. El servidor local de desarrollo no publica la aplicación en Internet. No hay credenciales, pagos ni servicios externos obligatorios.
+
+## Oferta y acceso de pago (pendiente de integración)
+
+El catálogo muestra 50 calendarios: 10 PDFs públicos y 40 posiciones bloqueadas, con títulos provisionales hasta recibir los diseños. La guía sigue siendo pública. La videoclase se presenta como exclusiva del Plan Diamante y no se entrega su URL en el catálogo público. El aviso de pago todavía no tiene checkout configurado.
+
+Los candados son presentación de la oferta, no una implementación de autenticación ni de cobro. Para acceso real tras la compra se necesita proveedor de pagos, verificación de pago en servidor, identificación del comprador y almacenamiento privado de materiales premium. No añadir archivos premium a `public/`. El enlace del vídeo fue publicado anteriormente: eliminarlo del catálogo no revoca el acceso directo ni las copias previas. Un vídeo de YouTube no listado no proporciona por sí solo control de acceso por pago.

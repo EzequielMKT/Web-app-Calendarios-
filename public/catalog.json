@@ -3,7 +3,7 @@
     "id": "2893473e-fb33-4657-81c2-e0b5abfc23ed",
     "type": "pdf",
     "title": "Guía de impresión de calendarios 2027",
-    "module": "Calendarios 2027",
+    "module": "Guía de impresión",
     "url": "/materials/e7651969-88c8-48cb-ae51-44e34a439008.pdf",
     "description": "Consulta la guía de impresión de calendarios 2027."
   },
@@ -12,8 +12,9 @@
     "type": "video",
     "title": "Videoclase · Calendarios 2027",
     "module": "Calendarios 2027",
-    "url": "https://www.youtube.com/watch?v=oGVFHjC_A5o&t=110s",
-    "description": "Mira la clase aquí, a partir del minuto 1:50."
+    "description": "Videoclase exclusiva para quienes adquieren el Plan Diamante.",
+    "locked": true,
+    "plan": "diamante"
   },
   {
     "id": "ddd50eef-e7c9-4f42-9b08-0a24f1feb44b",
@@ -94,5 +95,325 @@
     "module": "Calendarios 2027",
     "url": "/materials/f0115a77-f271-447b-988d-dc4edc3eec12.pdf",
     "description": "Calendario en PDF para consultar e imprimir."
+  },
+  {
+    "id": "calendar-2027-11",
+    "type": "pdf",
+    "title": "Calendario 11 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-12",
+    "type": "pdf",
+    "title": "Calendario 12 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-13",
+    "type": "pdf",
+    "title": "Calendario 13 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-14",
+    "type": "pdf",
+    "title": "Calendario 14 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-15",
+    "type": "pdf",
+    "title": "Calendario 15 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-16",
+    "type": "pdf",
+    "title": "Calendario 16 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-17",
+    "type": "pdf",
+    "title": "Calendario 17 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-18",
+    "type": "pdf",
+    "title": "Calendario 18 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-19",
+    "type": "pdf",
+    "title": "Calendario 19 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-20",
+    "type": "pdf",
+    "title": "Calendario 20 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-21",
+    "type": "pdf",
+    "title": "Calendario 21 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-22",
+    "type": "pdf",
+    "title": "Calendario 22 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-23",
+    "type": "pdf",
+    "title": "Calendario 23 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-24",
+    "type": "pdf",
+    "title": "Calendario 24 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-25",
+    "type": "pdf",
+    "title": "Calendario 25 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-26",
+    "type": "pdf",
+    "title": "Calendario 26 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-27",
+    "type": "pdf",
+    "title": "Calendario 27 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-28",
+    "type": "pdf",
+    "title": "Calendario 28 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-29",
+    "type": "pdf",
+    "title": "Calendario 29 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-30",
+    "type": "pdf",
+    "title": "Calendario 30 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-31",
+    "type": "pdf",
+    "title": "Calendario 31 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-32",
+    "type": "pdf",
+    "title": "Calendario 32 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-33",
+    "type": "pdf",
+    "title": "Calendario 33 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-34",
+    "type": "pdf",
+    "title": "Calendario 34 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-35",
+    "type": "pdf",
+    "title": "Calendario 35 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-36",
+    "type": "pdf",
+    "title": "Calendario 36 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-37",
+    "type": "pdf",
+    "title": "Calendario 37 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-38",
+    "type": "pdf",
+    "title": "Calendario 38 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-39",
+    "type": "pdf",
+    "title": "Calendario 39 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-40",
+    "type": "pdf",
+    "title": "Calendario 40 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-41",
+    "type": "pdf",
+    "title": "Calendario 41 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-42",
+    "type": "pdf",
+    "title": "Calendario 42 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-43",
+    "type": "pdf",
+    "title": "Calendario 43 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-44",
+    "type": "pdf",
+    "title": "Calendario 44 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-45",
+    "type": "pdf",
+    "title": "Calendario 45 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-46",
+    "type": "pdf",
+    "title": "Calendario 46 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-47",
+    "type": "pdf",
+    "title": "Calendario 47 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-48",
+    "type": "pdf",
+    "title": "Calendario 48 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-49",
+    "type": "pdf",
+    "title": "Calendario 49 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
+  },
+  {
+    "id": "calendar-2027-50",
+    "type": "pdf",
+    "title": "Calendario 50 · 2027",
+    "module": "Calendarios 2027",
+    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
+    "locked": true
   }
 ]
