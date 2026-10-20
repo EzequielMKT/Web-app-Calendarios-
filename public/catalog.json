@@ -138,18 +138,20 @@
   {
     "id": "calendar-2027-13",
     "type": "pdf",
-    "title": "Calendario 13 · 2027",
+    "title": "Calendario BTS 2027",
     "module": "Calendarios 2027",
-    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
-    "locked": true
+    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "locked": true,
+    "mockup": "/mockups/bts.webp"
   },
   {
     "id": "calendar-2027-14",
     "type": "pdf",
-    "title": "Calendario 14 · 2027",
+    "title": "Calendario Friends 2027",
     "module": "Calendarios 2027",
-    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
-    "locked": true
+    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "locked": true,
+    "mockup": "/mockups/friends.webp"
   },
   {
     "id": "calendar-2027-15",
