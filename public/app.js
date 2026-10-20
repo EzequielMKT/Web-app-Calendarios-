@@ -70,14 +70,15 @@ function render() {
       const mark = document.createElement('span'); mark.className = 'lock-mark'; mark.textContent = '🔒';
       const number = document.createElement('span'); number.textContent = item.title.match(/\d+/)?.[0] || '2027';
       art.append(mark, number); cover.append(art);
-    } else if (item.preview) {
-      const img = document.createElement('img'); img.src = safeUrl(item.preview); img.alt = `Vista previa: ${item.title}`; img.loading = 'lazy'; img.width = 300; img.height = 300; cover.append(img);
+    } else if (item.mockup || item.preview) {
+      if (item.mockup) { card.classList.add('has-mockup'); cover.classList.add('mockup-cover'); }
+      const img = document.createElement('img'); img.src = safeUrl(item.mockup || item.preview); img.alt = item.mockup ? `Mockup ilustrativo de ${item.title}` : `Vista previa: ${item.title}`; img.loading = 'lazy'; img.width = 300; img.height = 300; cover.append(img);
     }
     const availability = document.createElement('span'); availability.className = 'availability'; availability.textContent = item.locked ? 'ACCESO COMPLETO' : 'DISPONIBLE'; cover.append(availability);
     const body = document.createElement('div'); body.className = 'card-body';
     const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = 'COLECCIÓN 2027 · PDF';
     const title = document.createElement('h3'); title.textContent = item.title.replace(/\s*(?:·\s*)?2027$/, '');
-    const desc = document.createElement('p'); desc.textContent = item.locked ? 'Diseño por anunciar · Acceso con pago.' : 'Consulta el diseño o guárdalo para imprimir.';
+    const desc = document.createElement('p'); desc.textContent = item.locked ? 'Diseño por anunciar · Acceso con pago.' : item.mockup ? 'Mockup ilustrativo · Archivo PDF' : 'Consulta el diseño o guárdalo para imprimir.';
     body.append(tag, title, desc);
     if (item.locked) {
       const actions = document.createElement('div'); actions.className = 'actions';
@@ -125,9 +126,13 @@ function renderExtras() {
     const button = document.createElement('button'); button.className = 'button primary'; button.textContent = video.locked ? '🔒 Acceder con Plan Diamante' : 'Ver videoclase ▶'; button.onclick = () => video.locked ? showAccess(true) : openVideo(video);
     copy.append(label, h3, p, button); card.append(stage, copy); $('#video-card').append(card);
   }
-  const previews = items.filter(item => !item.locked && item.preview && item.module === 'Calendarios 2027');
-  if (previews[0]) $('#hero-front').src = safeUrl(previews[0].preview);
-  if (previews[4] || previews[1]) $('#hero-back').src = safeUrl((previews[4] || previews[1]).preview);
+  const previews = items.filter(item => !item.locked && (item.mockup || item.preview) && item.module === 'Calendarios 2027');
+  for (const [selector, item] of [['#hero-front', previews[0]], ['#hero-back', previews[4] || previews[1]]]) {
+    if (!item) continue;
+    const img = $(selector); img.src = safeUrl(item.mockup || item.preview);
+    img.alt = item.mockup ? `Mockup ilustrativo de ${item.title}` : `Vista previa de ${item.title}`;
+    img.closest('.hero-preview').classList.toggle('has-mockup', Boolean(item.mockup));
+  }
 }
 function youtubeId(value) {
   const url = new URL(value); const host = url.hostname.toLowerCase();

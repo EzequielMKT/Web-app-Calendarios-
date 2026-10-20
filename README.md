@@ -10,6 +10,8 @@ Node.js 22 o superior, sin dependencias de ejecución. Desde la raíz: `npm star
 
 `public/catalog.json` incluye 50 calendarios (10 PDFs disponibles y 40 posiciones bloqueadas con nombres provisionales), una guía pública y una videoclase bloqueada. Las imágenes de `public/previews/` son miniaturas reales de la primera página de los PDFs. Los PDFs disponibles pueden consultarse en un diálogo y descargarse con un enlace independiente. El soporte de vista previa del PDF depende del navegador; siempre se ofrece descarga.
 
+Los calendarios pueden incluir un campo `mockup` con la imagen de presentación generada a partir de su diseño. Se muestra como **mockup ilustrativo**, tanto en las tarjetas como en la portada, sin sustituir el campo `preview` ni el archivo `url`: las opciones **Ver PDF** y **Descargar** siempre usan el PDF original. Los mockups cuadrados se muestran completos, también en móvil. La guía de impresión conserva su miniatura real.
+
 Para añadir materiales: `npm run content -- pdf "Título" "Calendarios 2027" "/ruta/material.pdf" "Descripción"`. No duplicar los 50 diseños: al recibir los pendientes, actualizar la entrada correspondiente. El comando no genera miniaturas automáticamente. No subir archivos premium a `public/`.
 
 ## Datos comerciales de demostración
