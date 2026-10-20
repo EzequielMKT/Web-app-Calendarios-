@@ -16,7 +16,7 @@ Para añadir materiales: `npm run content -- pdf "Título" "Calendarios 2027" "/
 
 ## Flujo de venta y entrega
 
-La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 2027. El cliente recibe acceso a los primeros 10 antes de pagar. Después de realizar el pago acordado y enviar el comprobante por WhatsApp, el vendedor confirma el pago y entrega los 40 restantes. Los textos no presentan esos 40 como una compra adicional. La videoclase permanece vinculada al Plan Diamante, según el plan acordado por WhatsApp. Esta actualización de textos no implementa liberación automática ni identificación de compradores.
+La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 2027. El cliente recibe acceso a los primeros 10 antes de pagar. Después de realizar el pago acordado y enviar el comprobante por WhatsApp, el vendedor confirma el pago y envía los 40 restantes como archivos o mediante un enlace en esa misma conversación de WhatsApp. Los 40 permanecen bloqueados en la página pública; la entrega posterior ocurre fuera de este portal. Los textos no presentan esos 40 como una compra adicional. La videoclase permanece vinculada al Plan Diamante, según el plan acordado por WhatsApp. Esta actualización de textos no implementa liberación automática ni identificación de compradores.
 
 ## Datos comerciales de demostración
 
@@ -26,8 +26,8 @@ Antes de habilitar compras: sustituir precios, `whatsappGroupUrl`, `whatsappCont
 
 El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se inventan ganadores ni inscripciones automáticas.
 
-## Acceso de pago pendiente
+## Entrega manual de los materiales de pago
 
-Los candados presentan la oferta, pero no son autenticación ni cobro. El pago será confirmado manualmente por WhatsApp. Para liberar de forma segura se requiere identificación del comprador, permisos en servidor y almacenamiento privado de materiales premium. No hay desbloqueo automático ni un botón que marque un pago como verificado. El vídeo no entrega su URL en el catálogo público; el enlace se publicó anteriormente y retirarlo no revoca el acceso directo ni copias anteriores. YouTube no listado por sí solo no limita el acceso a compradores.
+Los candados presentan la oferta, pero no son autenticación ni cobro. El pago será confirmado manualmente por WhatsApp. Después de confirmar el pago, el vendedor envía los archivos o un enlace privado al comprador por WhatsApp. Este flujo mantiene los PDFs premium fuera de la carpeta pública del sitio y no requiere habilitar sus descargas en esta página. No hay desbloqueo automático ni un botón que marque un pago como verificado. El vídeo no entrega su URL en el catálogo público; el enlace se publicó anteriormente y retirarlo no revoca el acceso directo ni copias anteriores. YouTube no listado por sí solo no limita el acceso a compradores.
 
-Los diseños de Brujas, Ángeles, BTS y Friends sustituyen cuatro posiciones bloqueadas y muestran sus mockups. Sus PDFs completos están preservados fuera de la carpeta pública, en `/workspace/premium-calendarios/`, con un manifiesto de correspondencia; no se incluyen en el despliegue estático ni en Git. La entrega a compradores sigue pendiente de una solución de acceso privado. Los restantes 36 diseños bloqueados mantienen nombres provisionales.
+Los diseños de Brujas, Ángeles, BTS y Friends sustituyen cuatro posiciones bloqueadas y muestran sus mockups. Sus PDFs completos están preservados fuera de la carpeta pública, en `/workspace/premium-calendarios/`, con un manifiesto de correspondencia; no se incluyen en el despliegue estático ni en Git. El vendedor utiliza estos originales para la entrega manual por WhatsApp o para preparar el enlace que enviará al comprador. Los restantes 36 diseños bloqueados mantienen nombres provisionales.
