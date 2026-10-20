@@ -32,3 +32,8 @@
 .raffle-section .winner-caption b{font-size:10px;color:#9f1233}.raffle-section .winner-fiction-note{font-size:9px;color:#6b3213}
 
 .raffle-past-title{font-family:'Poppins Raffle',Arial,sans-serif;font-size:16px;font-weight:800;line-height:1.6;color:#fff;text-align:center;margin:22px auto 10px}.raffle-past-title strong{color:#ffdd67;font-weight:900}@media(max-width:700px){.raffle-past-title{font-size:11px;margin:17px auto 9px}}
+/* Draw attention to the giveaway invitation without changing its layout. */
+.raffle-invitation{position:relative;isolation:isolate;overflow:hidden;transform-origin:center;animation:raffle-invitation-pulse 3.6s ease-in-out infinite}.raffle-invitation>span{position:relative;z-index:1}.raffle-invitation::before{content:'';position:absolute;top:-80%;bottom:-80%;left:-45%;width:34%;z-index:0;pointer-events:none;opacity:0;background:linear-gradient(90deg,transparent,#ffffff8c,transparent);animation:raffle-invitation-shine 5.5s ease-in-out infinite}
+@keyframes raffle-invitation-pulse{0%,100%{transform:translateY(0) scale(1);box-shadow:0 0 27px #ffcc4c9c}50%{transform:translateY(-2px) scale(1.025);box-shadow:0 0 42px #ffcf63c2}}
+@keyframes raffle-invitation-shine{0%,55%{transform:translateX(-160%) skewX(-18deg);opacity:0}60%{opacity:.75}80%{transform:translateX(600%) skewX(-18deg);opacity:.75}81%,100%{transform:translateX(600%) skewX(-18deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.raffle-invitation,.raffle-invitation::before{animation:none!important;transform:none}.raffle-invitation::before{display:none}}
