@@ -24,7 +24,7 @@ La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 20
 
 Antes de habilitar compras: sustituir precios, `whatsappGroupUrl`, `whatsappContact` (número internacional solo con dígitos), métodos de pago y titular por información real revisada; entonces cambiar `demoMode` a `false`. Los datos de pago de esta configuración son públicos. No guardar claves, contraseñas ni tokens.
 
-El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se inventan ganadores ni inscripciones automáticas.
+El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se atribuyen resultados reales a las tarjetas de demostración ni se anuncia participación automática. Los tres nombres colombianos de las tarjetas son ficticios y están identificados como ejemplos; deben sustituirse por resultados reales cuando existan.
 
 ## Entrega manual de los materiales de pago
 
