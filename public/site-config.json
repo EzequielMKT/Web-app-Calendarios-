@@ -1,0 +1,14 @@
+{
+  "demoMode": true,
+  "whatsappGroupUrl": "",
+  "whatsappContact": "",
+  "payment": {
+    "currency": "COP",
+    "fullPrice": 19900,
+    "diamondPrice": 39900,
+    "methods": [
+      { "name": "Nequi · EJEMPLO", "account": "300 000 0000", "recipient": "Nombre del titular · Demostración" },
+      { "name": "Bancolombia · EJEMPLO", "account": "000 000 000 00", "recipient": "Cuenta de demostración · No realizar pagos" }
+    ]
+  }
+}

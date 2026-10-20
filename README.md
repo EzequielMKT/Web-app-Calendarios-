@@ -1,33 +1,25 @@
-# Sala — biblioteca pública
+# Calendarios Creativos · Colección 2027
 
-Web app en español para compartir PDFs y videoclases. Cualquier persona con el enlace puede consultar el catálogo, sin iniciar sesión. Búsqueda, filtros por módulo y tipo, y diseño adaptable a móviles.
+Portal en español, con diseño adaptable a móviles. Orden de la página: presentación, grupo de WhatsApp, sorteo de 50 caballetes, opciones de pago, calendarios con vista previa/descarga, guía y videoclase Diamante.
 
-## Desarrollo
+## Desarrollo y publicación
 
-Node.js 22 o superior, sin dependencias adicionales. Desde la raíz del proyecto:
+Node.js 22 o superior, sin dependencias de ejecución. Desde la raíz: `npm start` (puerto 3000, configurable con `PORT`) y `npm run check` para sintaxis. En Vercel: Framework Other, sin build, Output Directory `public`. No ejecutar el servidor Node para el despliegue estático.
 
-- `npm start`: servidor en el puerto 3000 (configurable con `PORT`).
-- `npm run check`: comprobación de sintaxis.
+## Contenidos
 
-## Publicar contenidos
+`public/catalog.json` incluye 50 calendarios (10 PDFs disponibles y 40 posiciones bloqueadas con nombres provisionales), una guía pública y una videoclase bloqueada. Las imágenes de `public/previews/` son miniaturas reales de la primera página de los PDFs. Los PDFs disponibles pueden consultarse en un diálogo y descargarse con un enlace independiente. El soporte de vista previa del PDF depende del navegador; siempre se ofrece descarga.
 
-El responsable añade materiales desde la terminal del proyecto; los visitantes no pueden modificar el catálogo.
+Para añadir materiales: `npm run content -- pdf "Título" "Calendarios 2027" "/ruta/material.pdf" "Descripción"`. No duplicar los 50 diseños: al recibir los pendientes, actualizar la entrada correspondiente. El comando no genera miniaturas automáticamente. No subir archivos premium a `public/`.
 
-```sh
-npm run content -- pdf "Guía de estudio" "Módulo 1" "/ruta/guia.pdf" "Material de apoyo"
-npm run content -- video "Primera clase" "Módulo 1" "https://www.youtube.com/watch?v=ID_REAL" "Introducción"
-```
+## Datos comerciales de demostración
 
-También se admite una URL HTTP/HTTPS pública para PDFs. Los archivos locales se copian a `public/materials/`; los metadatos se guardan en `public/catalog.json`. Para eliminar o editar contenidos, modifica ese catálogo y elimina los archivos que ya no necesites. Conserva estos cambios al publicar. Ejecuta el comando de alta de forma secuencial.
+`public/site-config.json` centraliza los datos públicos. `demoMode: true` indica que los valores en COP, cuentas y titular son ficticios: los diálogos indican no realizar pagos, no ofrecen copiar cuentas ni contactar números de ejemplo. Los botones de WhatsApp muestran avisos de demostración sin redirigir a grupos o personas desconocidas.
 
-No se incluyen aulas ficticias. El catálogo inicial está vacío. Las fuentes de Google son opcionales y tienen alternativas de sistema. Las videoclases de YouTube se reproducen dentro de la aplicación. Se admiten enlaces watch, youtu.be, shorts y live. El vídeo debe permitir inserción y estar disponible para los visitantes. Cerrar el reproductor detiene la reproducción.
+Antes de habilitar compras: sustituir precios, `whatsappGroupUrl`, `whatsappContact` (número internacional solo con dígitos), métodos de pago y titular por información real revisada; entonces cambiar `demoMode` a `false`. Los datos de pago de esta configuración son públicos. No guardar claves, contraseñas ni tokens.
 
-## Compartir
+El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se inventan ganadores ni inscripciones automáticas.
 
-La aplicación necesita alojamiento con una URL pública para que otras personas puedan acceder. Puede ejecutarse con Node.js o publicarse la carpeta `public` en un alojamiento estático HTTPS. El servidor local de desarrollo no publica la aplicación en Internet. No hay credenciales, pagos ni servicios externos obligatorios.
+## Acceso de pago pendiente
 
-## Oferta y acceso de pago (pendiente de integración)
-
-El catálogo muestra 50 calendarios: 10 PDFs públicos y 40 posiciones bloqueadas, con títulos provisionales hasta recibir los diseños. La guía sigue siendo pública. La videoclase se presenta como exclusiva del Plan Diamante y no se entrega su URL en el catálogo público. El aviso de pago todavía no tiene checkout configurado.
-
-Los candados son presentación de la oferta, no una implementación de autenticación ni de cobro. Para acceso real tras la compra se necesita proveedor de pagos, verificación de pago en servidor, identificación del comprador y almacenamiento privado de materiales premium. No añadir archivos premium a `public/`. El enlace del vídeo fue publicado anteriormente: eliminarlo del catálogo no revoca el acceso directo ni las copias previas. Un vídeo de YouTube no listado no proporciona por sí solo control de acceso por pago.
+Los candados presentan la oferta, pero no son autenticación ni cobro. El pago será confirmado manualmente por WhatsApp. Para liberar de forma segura se requiere identificación del comprador, permisos en servidor y almacenamiento privado de materiales premium. No hay desbloqueo automático ni un botón que marque un pago como verificado. El vídeo no entrega su URL en el catálogo público; el enlace se publicó anteriormente y retirarlo no revoca el acceso directo ni copias anteriores. YouTube no listado por sí solo no limita el acceso a compradores.
