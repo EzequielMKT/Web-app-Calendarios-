@@ -14,7 +14,7 @@ function showInfo(title, message) {
 }
 function showAccess(diamond = false) {
   $('#access-title').textContent = diamond ? 'Pago de tu Plan Diamante' : 'Completa el pago de tu paquete';
-  $('#access-message').textContent = diamond ? 'Si acordaste el Plan Diamante por WhatsApp, recibirás los calendarios restantes y la videoclase después de confirmar tu pago.' : 'Tu paquete incluye 50 calendarios. Los primeros 10 ya están disponibles. Realiza el pago acordado y envía el comprobante por WhatsApp. Después de confirmarlo, te enviaremos los otros 40 por esa misma conversación, como archivos o mediante un enlace.';
+  $('#access-message').textContent = diamond ? 'Si acordaste el Plan Diamante por WhatsApp, recibirás los calendarios restantes y la videoclase después de confirmar tu pago.' : 'Tu paquete incluye 50 calendarios. Los primeros 10 ya están disponibles. Realiza el pago acordado y envía el comprobante por WhatsApp. Después de confirmarlo, se desbloquearán los 40 calendarios restantes.';
   const details = $('#payment-details'); details.replaceChildren();
   const price = diamond ? config.payment?.diamondPrice : config.payment?.fullPrice;
   if (price != null) {
@@ -36,7 +36,7 @@ function showAccess(diamond = false) {
     }
     details.append(box);
   }
-  $('#access-note').textContent = config.demoMode ? 'Estos datos son ficticios. Los datos reales del pago acordado por WhatsApp se publicarán antes de habilitar los pagos.' : 'Envía el comprobante en tu conversación de WhatsApp. Tras confirmar el pago, te enviaremos allí los archivos o el enlace de los 40 calendarios restantes.';
+  $('#access-note').textContent = config.demoMode ? 'Estos datos son ficticios. Los datos reales del pago acordado por WhatsApp se publicarán antes de habilitar los pagos.' : 'Envía el comprobante en tu conversación de WhatsApp. Tras confirmar el pago, se desbloquearán los 40 calendarios restantes.';
   $('#payment-contact').textContent = config.demoMode ? 'WhatsApp · contacto de demostración' : 'Enviar comprobante por WhatsApp →';
   $('#access-dialog').showModal();
 }
@@ -101,7 +101,7 @@ function renderCommercialInfo() {
     const recipient = document.createElement('p'); recipient.textContent = first.recipient; preview.append(method, recipient);
   }
   const button = document.createElement('button'); button.className = 'text-link'; button.textContent = config.demoMode ? 'Ver todos los datos de ejemplo →' : 'Ver datos de pago →'; button.onclick = () => showAccess(); preview.append(button);
-  $('.payment-note').textContent = config.demoMode ? 'Los valores y los datos mostrados son de ejemplo. Se sustituirán por los datos reales del pago acordado por WhatsApp antes de habilitar los pagos.' : 'Realiza el pago acordado y envía el comprobante por WhatsApp. Tras confirmarlo, recibirás en esa conversación los archivos o el enlace de los 40 calendarios restantes.';
+  $('.payment-note').textContent = config.demoMode ? 'Los valores y los datos mostrados son de ejemplo. Se sustituirán por los datos reales del pago acordado por WhatsApp antes de habilitar los pagos.' : 'Realiza el pago acordado y envía el comprobante por WhatsApp. Tras confirmarlo, se desbloquearán los 40 calendarios restantes.';
 }
 function renderExtras() {
   $('#guide').replaceChildren();
@@ -168,7 +168,7 @@ $('#payment-contact').onclick = () => {
   if (config.demoMode || !config.whatsappContact) { showInfo('Contacto de demostración', 'El número de WhatsApp todavía no está configurado. No realices pagos a los datos de ejemplo.'); return; }
   const phone = String(config.whatsappContact).replace(/\D/g, '');
   if (!/^\d{8,15}$/.test(phone)) { showInfo('Contacto no disponible', 'El número de contacto se está actualizando.'); return; }
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Hola, quiero confirmar el pago de mi paquete de 50 calendarios 2027 para recibir por WhatsApp los archivos o el enlace de los 40 restantes.')}`, '_blank', 'noopener,noreferrer');
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Hola, quiero confirmar el pago de mi paquete de 50 calendarios 2027 para desbloquear los 40 calendarios restantes.')}`, '_blank', 'noopener,noreferrer');
 };
 (async () => {
   try {
