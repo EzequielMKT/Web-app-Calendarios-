@@ -65,7 +65,7 @@ function render() {
   for (const item of matches) {
     const card = document.createElement('article'); card.className = `card ${item.locked ? 'locked' : 'available'}`;
     const cover = document.createElement('div'); cover.className = 'cover';
-    if (item.locked) {
+    if (item.locked && !item.mockup) {
       const art = document.createElement('div'); art.className = 'locked-art'; art.setAttribute('aria-hidden', 'true');
       const mark = document.createElement('span'); mark.className = 'lock-mark'; mark.textContent = '🔒';
       const number = document.createElement('span'); number.textContent = item.title.match(/\d+/)?.[0] || '2027';
@@ -74,11 +74,14 @@ function render() {
       if (item.mockup) { card.classList.add('has-mockup'); cover.classList.add('mockup-cover'); }
       const img = document.createElement('img'); img.src = safeUrl(item.mockup || item.preview); img.alt = item.mockup ? `Mockup ilustrativo de ${item.title}` : `Vista previa: ${item.title}`; img.loading = 'lazy'; img.width = 300; img.height = 300; cover.append(img);
     }
-    const availability = document.createElement('span'); availability.className = 'availability'; availability.textContent = item.locked ? 'ACCESO COMPLETO' : 'DISPONIBLE'; cover.append(availability);
+    if (item.locked && item.mockup) {
+      const lockBadge = document.createElement('span'); lockBadge.className = 'mockup-lock-badge'; lockBadge.textContent = '🔒 Bloqueado'; cover.append(lockBadge);
+    }
+    const availability = document.createElement('span'); availability.className = 'availability'; availability.textContent = item.locked ? '🔒 ACCESO COMPLETO' : 'DISPONIBLE'; cover.append(availability);
     const body = document.createElement('div'); body.className = 'card-body';
     const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = 'COLECCIÓN 2027 · PDF';
     const title = document.createElement('h3'); title.textContent = item.title.replace(/\s*(?:·\s*)?2027$/, '');
-    const desc = document.createElement('p'); desc.textContent = item.locked ? 'Diseño por anunciar · Acceso con pago.' : item.mockup ? 'Mockup ilustrativo · Archivo PDF' : 'Consulta el diseño o guárdalo para imprimir.';
+    const desc = document.createElement('p'); desc.textContent = item.locked ? (item.mockup ? 'Mockup ilustrativo · Acceso con pago.' : 'Diseño por anunciar · Acceso con pago.') : item.mockup ? 'Mockup ilustrativo · Archivo PDF' : 'Consulta el diseño o guárdalo para imprimir.';
     body.append(tag, title, desc);
     if (item.locked) {
       const actions = document.createElement('div'); actions.className = 'actions';

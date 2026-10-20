@@ -120,18 +120,20 @@
   {
     "id": "calendar-2027-11",
     "type": "pdf",
-    "title": "Calendario 11 · 2027",
+    "title": "Calendario de Brujas 2027",
     "module": "Calendarios 2027",
-    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
-    "locked": true
+    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "locked": true,
+    "mockup": "/mockups/brujas.webp"
   },
   {
     "id": "calendar-2027-12",
     "type": "pdf",
-    "title": "Calendario 12 · 2027",
+    "title": "Calendario de Ángeles 2027",
     "module": "Calendarios 2027",
-    "description": "Diseño por anunciar · Material reservado para el acceso completo.",
-    "locked": true
+    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "locked": true,
+    "mockup": "/mockups/angeles.webp"
   },
   {
     "id": "calendar-2027-13",

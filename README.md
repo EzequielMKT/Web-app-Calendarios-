@@ -25,3 +25,5 @@ El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La im
 ## Acceso de pago pendiente
 
 Los candados presentan la oferta, pero no son autenticación ni cobro. El pago será confirmado manualmente por WhatsApp. Para liberar de forma segura se requiere identificación del comprador, permisos en servidor y almacenamiento privado de materiales premium. No hay desbloqueo automático ni un botón que marque un pago como verificado. El vídeo no entrega su URL en el catálogo público; el enlace se publicó anteriormente y retirarlo no revoca el acceso directo ni copias anteriores. YouTube no listado por sí solo no limita el acceso a compradores.
+
+Los diseños de Brujas y Ángeles sustituyen dos posiciones bloqueadas y muestran sus mockups. Sus PDFs completos están preservados fuera de la carpeta pública, en `/workspace/premium-calendarios/`, con un manifiesto de correspondencia; no se incluyen en el despliegue estático ni en Git. La entrega a compradores sigue pendiente de una solución de acceso privado. Los restantes 38 diseños bloqueados mantienen nombres provisionales.
