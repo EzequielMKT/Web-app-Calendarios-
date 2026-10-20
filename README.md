@@ -1,6 +1,6 @@
 # Calendarios Creativos · Colección 2027
 
-Portal en español, con diseño adaptable a móviles. Orden de la página: presentación, grupo de WhatsApp, sorteo de 50 caballetes, opciones de pago, calendarios con vista previa/descarga, guía y videoclase Diamante.
+Portal en español, con diseño adaptable a móviles. Orden de la página: presentación, grupo de WhatsApp, sorteo de mini caballetes, opciones de pago, calendarios con vista previa/descarga, guía y videoclase Diamante.
 
 ## Desarrollo y publicación
 
@@ -24,7 +24,7 @@ La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 20
 
 Antes de habilitar compras: sustituir precios, `whatsappGroupUrl`, `whatsappContact` (número internacional solo con dígitos), métodos de pago y titular por información real revisada; entonces cambiar `demoMode` a `false`. Los datos de pago de esta configuración son públicos. No guardar claves, contraseñas ni tokens.
 
-El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se atribuyen resultados reales a las tarjetas de demostración ni se anuncia participación automática. El nombre colombiano de la tarjeta de ganadora es ficticio y está identificado como ejemplo; debe sustituirse por un resultado real cuando exista.
+El próximo sorteo anunciado es el 30/10. Los premios definidos por el responsable son: primer lugar, 100 mini caballetes; segundo lugar, 50; tercer lugar, 12. Quienes adquieren los calendarios participan automáticamente según la regla comercial informada por el vendedor; la organización y el registro corresponden al responsable de las ventas por WhatsApp. El sitio presenta esa información y no ejecuta el sorteo. La tarjeta de una ganadora anterior es un ejemplo ficticio identificado y deberá sustituirse por un resultado real cuando exista.
 
 ## Entrega manual de los materiales de pago
 
