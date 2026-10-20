@@ -24,7 +24,7 @@ La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 20
 
 Antes de habilitar compras: sustituir precios, `whatsappGroupUrl`, `whatsappContact` (número internacional solo con dígitos), métodos de pago y titular por información real revisada; entonces cambiar `demoMode` a `false`. Los datos de pago de esta configuración son públicos. No guardar claves, contraseñas ni tokens.
 
-El próximo sorteo anunciado es el 30/10. Los premios definidos por el responsable son: primer lugar, 100 mini caballetes; segundo lugar, 50; tercer lugar, 12. Quienes adquieren los calendarios participan automáticamente según la regla comercial informada por el vendedor; la organización y el registro corresponden al responsable de las ventas por WhatsApp. El sitio presenta esa información y no ejecuta el sorteo. La tarjeta de una ganadora anterior es un ejemplo ficticio identificado y deberá sustituirse por un resultado real cuando exista.
+El próximo sorteo anunciado es el 30/10. Los premios definidos por el responsable son: primer lugar, 100 mini caballetes; segundo lugar, 50; tercer lugar, 12. Quienes adquieren los calendarios participan automáticamente según la regla comercial informada por el vendedor; la organización y el registro corresponden al responsable de las ventas por WhatsApp. El sitio presenta esa información y no ejecuta el sorteo. Los resultados del sorteo de 30/09, proporcionados por el responsable, son: Gloria, primer lugar (100 mini caballetes); Carmen, segundo lugar (50); Rosa, tercer lugar (12). La página muestra esos nombres y premios sin añadir apellidos ni ubicaciones no informadas.
 
 ## Entrega manual de los materiales de pago
 
