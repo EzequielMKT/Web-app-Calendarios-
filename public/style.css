@@ -37,3 +37,20 @@
 @keyframes raffle-invitation-pulse{0%,100%{transform:translateY(0) scale(1);box-shadow:0 0 27px #ffcc4c9c}50%{transform:translateY(-2px) scale(1.025);box-shadow:0 0 42px #ffcf63c2}}
 @keyframes raffle-invitation-shine{0%,55%{transform:translateX(-160%) skewX(-18deg);opacity:0}60%{opacity:.75}80%{transform:translateX(600%) skewX(-18deg);opacity:.75}81%,100%{transform:translateX(600%) skewX(-18deg);opacity:0}}
 @media(prefers-reduced-motion:reduce){.raffle-invitation,.raffle-invitation::before{animation:none!important;transform:none}.raffle-invitation::before{display:none}}
+/* Shared button motion; card actions use staggered, slower cycles. */
+:is(button,.button,.header-cta,a.text-link){--action-cycle:7.4s;--action-shine-cycle:9s;--action-delay:0s;--action-scale:1.02;--action-rise:-1px;position:relative;isolation:isolate;overflow:hidden;transform-origin:center;animation:action-button-pulse var(--action-cycle) ease-in-out var(--action-delay) infinite}
+a.text-link{display:inline-flex;align-items:center;justify-content:center}
+:is(button,.button,.header-cta,a.text-link)::after{content:'';position:absolute;top:-80%;bottom:-80%;left:-45%;width:34%;z-index:-1;pointer-events:none;opacity:0;border-radius:inherit;background:linear-gradient(90deg,transparent,#ffffff8c,transparent);animation:action-button-shine var(--action-shine-cycle) ease-in-out calc(var(--action-delay) - 1.1s) infinite}
+:is(.button.primary,.button.whatsapp,.header-cta){--action-delay:-3.2s}
+.actions .button{--action-cycle:11s;--action-shine-cycle:13s;--action-scale:1.015;--action-rise:-.5px}
+.card:nth-child(4n+1){--card-action-delay:-1s}.card:nth-child(4n+2){--card-action-delay:-3.5s}.card:nth-child(4n+3){--card-action-delay:-6s}.card:nth-child(4n){--card-action-delay:-8.5s}
+.card .actions .button{--action-delay:var(--card-action-delay,0s)}.actions .button:nth-child(2){--action-delay:calc(var(--card-action-delay,0s) - 1.4s)}
+:is(.filters button,.close-dialog,.copy-button,button.text-link,a.text-link){--action-cycle:12s;--action-shine-cycle:14s;--action-scale:1.01;--action-rise:0px;--action-delay:-2s}
+:is(button,.button,.header-cta,a.text-link):is(:hover,:focus-visible){animation-play-state:paused}
+:is(button,.button,.header-cta,a.text-link):is(:hover,:focus-visible)::after{animation-play-state:paused}
+:is(button,.button,.header-cta,a.text-link):active{transform:scale(.98)!important}
+:is(button,.button,.header-cta,a.text-link):is(:disabled,[aria-disabled='true']){animation:none;transform:none}
+:is(button,.button,.header-cta,a.text-link):is(:disabled,[aria-disabled='true'])::after{animation:none;display:none}
+@keyframes action-button-pulse{0%,55%,90%,100%{transform:translateY(0) scale(1);filter:brightness(1)}72%{transform:translateY(var(--action-rise)) scale(var(--action-scale));filter:brightness(1.055)}}
+@keyframes action-button-shine{0%,58%{transform:translateX(-160%) skewX(-18deg);opacity:0}63%{opacity:.7}81%{transform:translateX(600%) skewX(-18deg);opacity:.7}82%,100%{transform:translateX(600%) skewX(-18deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){:is(button,.button,.header-cta,a.text-link){animation:none!important;transform:none!important;filter:none!important}:is(button,.button,.header-cta,a.text-link)::after{animation:none!important;display:none}}
