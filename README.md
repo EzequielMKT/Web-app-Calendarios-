@@ -24,10 +24,12 @@ La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 20
 
 Antes de habilitar compras: sustituir precios, `whatsappGroupUrl`, `whatsappContact` (número internacional solo con dígitos), métodos de pago y titular por información real revisada; entonces cambiar `demoMode` a `false`. Los datos de pago de esta configuración son públicos. No guardar claves, contraseñas ni tokens.
 
-El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se atribuyen resultados reales a las tarjetas de demostración ni se anuncia participación automática. Los tres nombres colombianos de las tarjetas son ficticios y están identificados como ejemplos; deben sustituirse por resultados reales cuando existan.
+El sorteo muestra la cantidad indicada por el responsable (50 caballetes). La imagen es una ilustración, no una foto del premio. Fecha, condiciones, distribución de premios y participación están pendientes; no se atribuyen resultados reales a las tarjetas de demostración ni se anuncia participación automática. El nombre colombiano de la tarjeta de ganadora es ficticio y está identificado como ejemplo; debe sustituirse por un resultado real cuando exista.
 
 ## Entrega manual de los materiales de pago
 
 Los candados presentan la oferta, pero no son autenticación ni cobro. El pago será confirmado manualmente por WhatsApp. Después de confirmar el pago, el vendedor envía los archivos o un enlace privado al comprador por WhatsApp. Este flujo mantiene los PDFs premium fuera de la carpeta pública del sitio y no requiere habilitar sus descargas en esta página. No hay desbloqueo automático ni un botón que marque un pago como verificado. El vídeo no entrega su URL en el catálogo público; el enlace se publicó anteriormente y retirarlo no revoca el acceso directo ni copias anteriores. YouTube no listado por sí solo no limita el acceso a compradores.
 
 Los diseños de Brujas, Ángeles, BTS y Friends sustituyen cuatro posiciones bloqueadas y muestran sus mockups. Sus PDFs completos están preservados fuera de la carpeta pública, en `/workspace/premium-calendarios/`, con un manifiesto de correspondencia; no se incluyen en el despliegue estático ni en Git. El vendedor utiliza estos originales para la entrega manual por WhatsApp o para preparar el enlace que enviará al comprador. Los restantes 36 diseños bloqueados mantienen nombres provisionales.
+
+La sección de sorteo utiliza Poppins de forma local, obtenida de `@fontsource/poppins@5.3.0`; la licencia SIL Open Font License está incluida en `public/fonts/Poppins-OFL.txt`.
