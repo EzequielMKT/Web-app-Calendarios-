@@ -122,7 +122,7 @@
     "type": "pdf",
     "title": "Calendario de Brujas 2027",
     "module": "Calendarios 2027",
-    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "description": "Mockup · Calendario reservado para el acceso completo.",
     "locked": true,
     "mockup": "/mockups/brujas.webp"
   },
@@ -131,7 +131,7 @@
     "type": "pdf",
     "title": "Calendario de Ángeles 2027",
     "module": "Calendarios 2027",
-    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "description": "Mockup · Calendario reservado para el acceso completo.",
     "locked": true,
     "mockup": "/mockups/angeles.webp"
   },
@@ -140,7 +140,7 @@
     "type": "pdf",
     "title": "Calendario BTS 2027",
     "module": "Calendarios 2027",
-    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "description": "Mockup · Calendario reservado para el acceso completo.",
     "locked": true,
     "mockup": "/mockups/bts.webp"
   },
@@ -149,7 +149,7 @@
     "type": "pdf",
     "title": "Calendario Friends 2027",
     "module": "Calendarios 2027",
-    "description": "Mockup ilustrativo · Calendario reservado para el acceso completo.",
+    "description": "Mockup · Calendario reservado para el acceso completo.",
     "locked": true,
     "mockup": "/mockups/friends.webp"
   },

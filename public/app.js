@@ -72,7 +72,7 @@ function render() {
       art.append(mark, number); cover.append(art);
     } else if (item.mockup || item.preview) {
       if (item.mockup) { card.classList.add('has-mockup'); cover.classList.add('mockup-cover'); }
-      const img = document.createElement('img'); img.src = safeUrl(item.mockup || item.preview); img.alt = item.mockup ? `Mockup ilustrativo de ${item.title}` : `Vista previa: ${item.title}`; img.loading = 'lazy'; img.width = 300; img.height = 300; cover.append(img);
+      const img = document.createElement('img'); img.src = safeUrl(item.mockup || item.preview); img.alt = item.mockup ? `Mockup de ${item.title}` : `Vista previa: ${item.title}`; img.loading = 'lazy'; img.width = 300; img.height = 300; cover.append(img);
     }
     if (item.locked && item.mockup) {
       const lockBadge = document.createElement('span'); lockBadge.className = 'mockup-lock-badge'; lockBadge.textContent = '🔒 Bloqueado'; cover.append(lockBadge);
@@ -81,7 +81,7 @@ function render() {
     const body = document.createElement('div'); body.className = 'card-body';
     const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = 'COLECCIÓN 2027 · PDF';
     const title = document.createElement('h3'); title.textContent = item.title.replace(/\s*(?:·\s*)?2027$/, '');
-    const desc = document.createElement('p'); desc.textContent = item.locked ? (item.mockup ? 'Mockup ilustrativo · Acceso con pago.' : 'Diseño por anunciar · Acceso con pago.') : item.mockup ? 'Mockup ilustrativo · Archivo PDF' : 'Consulta el diseño o guárdalo para imprimir.';
+    const desc = document.createElement('p'); desc.textContent = item.locked ? (item.mockup ? 'Mockup · Acceso con pago.' : 'Diseño por anunciar · Acceso con pago.') : item.mockup ? 'Mockup · Archivo PDF' : 'Consulta el diseño o guárdalo para imprimir.';
     body.append(tag, title, desc);
     if (item.locked) {
       const actions = document.createElement('div'); actions.className = 'actions';
@@ -133,7 +133,7 @@ function renderExtras() {
   for (const [selector, item] of [['#hero-front', previews[0]], ['#hero-back', previews[4] || previews[1]]]) {
     if (!item) continue;
     const img = $(selector); img.src = safeUrl(item.mockup || item.preview);
-    img.alt = item.mockup ? `Mockup ilustrativo de ${item.title}` : `Vista previa de ${item.title}`;
+    img.alt = item.mockup ? `Mockup de ${item.title}` : `Vista previa de ${item.title}`;
     img.closest('.hero-preview').classList.toggle('has-mockup', Boolean(item.mockup));
   }
 }
