@@ -2,6 +2,60 @@ const $ = selector => document.querySelector(selector);
 let items = [], filter = 'all';
 let config = { demoMode: true, payment: { currency: 'COP', methods: [] } };
 const money = value => new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(value);
+const entranceSelector = '.card,.guide-card,.video-feature,.plan-card,.winner-card';
+const entranceMedia = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+const enteredCards = new WeakSet();
+const enteredCalendarKeys = new Set();
+const observedCards = new Set();
+const activeEntrances = new Map();
+let entranceObserver = null;
+function markCardEntered(card) {
+  enteredCards.add(card);
+  if (card.dataset.entranceKey) enteredCalendarKeys.add(card.dataset.entranceKey);
+}
+if ('IntersectionObserver' in window && typeof Element.prototype.animate === 'function' && entranceMedia) {
+  entranceObserver = new IntersectionObserver(entries => {
+    let order = 0;
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const card = entry.target;
+      entranceObserver.unobserve(card); observedCards.delete(card); markCardEntered(card);
+      if (entranceMedia.matches || card.contains(document.activeElement)) continue;
+      const animation = card.animate(
+        [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'translateY(0)' }],
+        { duration: 480, delay: (order++ % 4) * 60, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' }
+      );
+      activeEntrances.set(card, animation);
+      animation.finished.then(() => activeEntrances.delete(card), () => activeEntrances.delete(card));
+    }
+  }, { threshold: .06, rootMargin: '0px 0px 24px 0px' });
+}
+function prepareCardEntrances(root = document) {
+  if (!entranceObserver || entranceMedia.matches) return;
+  for (const card of observedCards) {
+    if (!card.isConnected) { entranceObserver.unobserve(card); observedCards.delete(card); }
+  }
+  for (const [card, animation] of activeEntrances) {
+    if (!card.isConnected) { animation.cancel(); activeEntrances.delete(card); }
+  }
+  for (const card of root.querySelectorAll(entranceSelector)) {
+    if (observedCards.has(card) || enteredCards.has(card) || enteredCalendarKeys.has(card.dataset.entranceKey)) continue;
+    observedCards.add(card); entranceObserver.observe(card);
+  }
+}
+entranceMedia?.addEventListener?.('change', () => {
+  if (entranceMedia.matches) {
+    entranceObserver?.disconnect(); observedCards.clear();
+    for (const animation of activeEntrances.values()) animation.cancel();
+    activeEntrances.clear();
+  } else prepareCardEntrances();
+});
+document.addEventListener('focusin', event => {
+  const card = event.target.closest(entranceSelector);
+  if (!card) return;
+  entranceObserver?.unobserve(card); observedCards.delete(card); markCardEntered(card);
+  activeEntrances.get(card)?.cancel(); activeEntrances.delete(card);
+});
 function safeUrl(value) {
   if (typeof value !== 'string' || !value) throw new Error('Falta el enlace');
   const url = new URL(value, location.origin);
@@ -63,7 +117,7 @@ function render() {
     const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = 'No encontramos ese calendario. Prueba otra búsqueda.'; $('#cards').append(empty);
   }
   for (const item of matches) {
-    const card = document.createElement('article'); card.className = `card ${item.locked ? 'locked' : 'available'}`;
+    const card = document.createElement('article'); card.className = `card ${item.locked ? 'locked' : 'available'}`; card.dataset.entranceKey = item.id;
     const cover = document.createElement('div'); cover.className = 'cover';
     if (item.locked && !item.mockup) {
       const art = document.createElement('div'); art.className = 'locked-art'; art.setAttribute('aria-hidden', 'true');
@@ -90,6 +144,7 @@ function render() {
     card.append(cover, body); $('#cards').append(card);
   }
   $('#count').textContent = query || filter !== 'all' ? `${matches.length} calendarios en esta selección · 50 en la colección` : '50 calendarios · 10 disponibles antes del pago · 40 pendientes de entrega';
+  prepareCardEntrances($('#cards'));
 }
 function renderCommercialInfo() {
   document.querySelectorAll('.plans .demo-label').forEach(label => { label.hidden = !config.demoMode; });
@@ -136,6 +191,7 @@ function renderExtras() {
     img.alt = item.mockup ? `Mockup de ${item.title}` : `Vista previa de ${item.title}`;
     img.closest('.hero-preview').classList.toggle('has-mockup', Boolean(item.mockup));
   }
+  prepareCardEntrances();
 }
 function youtubeId(value) {
   const url = new URL(value); const host = url.hostname.toLowerCase();
