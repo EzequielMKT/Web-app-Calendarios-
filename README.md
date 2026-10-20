@@ -14,6 +14,10 @@ Los calendarios pueden incluir un campo `mockup` con la imagen de presentación 
 
 Para añadir materiales: `npm run content -- pdf "Título" "Calendarios 2027" "/ruta/material.pdf" "Descripción"`. No duplicar los 50 diseños: al recibir los pendientes, actualizar la entrada correspondiente. El comando no genera miniaturas automáticamente. No subir archivos premium a `public/`.
 
+## Flujo de venta y entrega
+
+La venta se acuerda por WhatsApp y corresponde a un paquete de 50 calendarios 2027. El cliente recibe acceso a los primeros 10 antes de pagar. Después de realizar el pago acordado y enviar el comprobante por WhatsApp, el vendedor confirma el pago y entrega los 40 restantes. Los textos no presentan esos 40 como una compra adicional. La videoclase permanece vinculada al Plan Diamante, según el plan acordado por WhatsApp. Esta actualización de textos no implementa liberación automática ni identificación de compradores.
+
 ## Datos comerciales de demostración
 
 `public/site-config.json` centraliza los datos públicos. `demoMode: true` indica que los valores en COP, cuentas y titular son ficticios: los diálogos indican no realizar pagos, no ofrecen copiar cuentas ni contactar números de ejemplo. Los botones de WhatsApp muestran avisos de demostración sin redirigir a grupos o personas desconocidas.

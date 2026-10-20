@@ -13,8 +13,8 @@ function showInfo(title, message) {
   $('#info-dialog').showModal();
 }
 function showAccess(diamond = false) {
-  $('#access-title').textContent = diamond ? 'Tu siguiente paso: Plan Diamante' : 'Tu colección completa te espera';
-  $('#access-message').textContent = diamond ? 'La videoclase está disponible únicamente para quienes pagan el Plan Diamante.' : 'Realiza el pago para acceder al resto de los materiales: los 40 calendarios de la colección completa.';
+  $('#access-title').textContent = diamond ? 'Pago de tu Plan Diamante' : 'Completa el pago de tu paquete';
+  $('#access-message').textContent = diamond ? 'Si acordaste el Plan Diamante por WhatsApp, recibirás los calendarios restantes y la videoclase después de confirmar tu pago.' : 'Tu paquete incluye 50 calendarios. Los primeros 10 ya están disponibles. Realiza el pago acordado por WhatsApp y envía el comprobante para recibir los 40 restantes después de la confirmación.';
   const details = $('#payment-details'); details.replaceChildren();
   const price = diamond ? config.payment?.diamondPrice : config.payment?.fullPrice;
   if (price != null) {
@@ -36,7 +36,7 @@ function showAccess(diamond = false) {
     }
     details.append(box);
   }
-  $('#access-note').textContent = config.demoMode ? 'Estos datos son ficticios. Los datos reales de pago y contacto se publicarán antes de habilitar las compras.' : 'Después de realizar el pago, envía el comprobante por WhatsApp para la confirmación manual. Cerrar esta ventana no desbloquea materiales.';
+  $('#access-note').textContent = config.demoMode ? 'Estos datos son ficticios. Los datos reales del pago acordado por WhatsApp se publicarán antes de habilitar los pagos.' : 'Envía el comprobante en tu conversación de WhatsApp. Tras confirmar el pago, te entregaremos los 40 calendarios restantes de tu paquete.';
   $('#payment-contact').textContent = config.demoMode ? 'WhatsApp · contacto de demostración' : 'Enviar comprobante por WhatsApp →';
   $('#access-dialog').showModal();
 }
@@ -85,11 +85,11 @@ function render() {
     body.append(tag, title, desc);
     if (item.locked) {
       const actions = document.createElement('div'); actions.className = 'actions';
-      const unlock = document.createElement('button'); unlock.className = 'button unlock'; unlock.textContent = '🔒 Desbloquear diseño'; unlock.onclick = () => showAccess(); actions.append(unlock); body.append(actions);
+      const unlock = document.createElement('button'); unlock.className = 'button unlock'; unlock.textContent = '🔒 Completar mi entrega'; unlock.onclick = () => showAccess(); actions.append(unlock); body.append(actions);
     } else { body.append(pdfActions(item)); }
     card.append(cover, body); $('#cards').append(card);
   }
-  $('#count').textContent = query || filter !== 'all' ? `${matches.length} calendarios en esta selección · 50 en la colección` : '50 diseños · 10 disponibles para empezar · 40 con acceso completo';
+  $('#count').textContent = query || filter !== 'all' ? `${matches.length} calendarios en esta selección · 50 en la colección` : '50 calendarios · 10 disponibles antes del pago · 40 pendientes de entrega';
 }
 function renderCommercialInfo() {
   document.querySelectorAll('.plans .demo-label').forEach(label => { label.hidden = !config.demoMode; });
@@ -101,7 +101,7 @@ function renderCommercialInfo() {
     const recipient = document.createElement('p'); recipient.textContent = first.recipient; preview.append(method, recipient);
   }
   const button = document.createElement('button'); button.className = 'text-link'; button.textContent = config.demoMode ? 'Ver todos los datos de ejemplo →' : 'Ver datos de pago →'; button.onclick = () => showAccess(); preview.append(button);
-  $('.payment-note').textContent = config.demoMode ? 'Los valores y los datos mostrados son de ejemplo. Antes de habilitar las compras se publicarán los datos reales. La confirmación del pago será manual por WhatsApp.' : 'Después de pagar, envía el comprobante por WhatsApp para la confirmación manual de tu compra.';
+  $('.payment-note').textContent = config.demoMode ? 'Los valores y los datos mostrados son de ejemplo. Se sustituirán por los datos reales del pago acordado por WhatsApp antes de habilitar los pagos.' : 'Realiza el pago acordado por WhatsApp y envía el comprobante. Tras confirmarlo, te entregaremos los 40 calendarios restantes de tu paquete de 50.';
 }
 function renderExtras() {
   $('#guide').replaceChildren();
@@ -125,8 +125,8 @@ function renderExtras() {
     const copy = document.createElement('div'); copy.className = 'video-copy';
     const label = document.createElement('span'); label.className = 'eyebrow'; label.textContent = '✧ EXCLUSIVO DEL PLAN DIAMANTE';
     const h3 = document.createElement('h3'); h3.textContent = 'Una clase para acompañar tus ideas.';
-    const p = document.createElement('p'); p.textContent = 'Mira la videoclase sin salir de tu espacio creativo. Este contenido requiere el Plan Diamante.';
-    const button = document.createElement('button'); button.className = 'button primary'; button.textContent = video.locked ? '🔒 Acceder con Plan Diamante' : 'Ver videoclase ▶'; button.onclick = () => video.locked ? showAccess(true) : openVideo(video);
+    const p = document.createElement('p'); p.textContent = 'Si acordaste el Plan Diamante por WhatsApp, tu entrega incluye esta videoclase después de confirmar el pago.';
+    const button = document.createElement('button'); button.className = 'button primary'; button.textContent = video.locked ? '🔒 Confirmar pago Diamante' : 'Ver videoclase ▶'; button.onclick = () => video.locked ? showAccess(true) : openVideo(video);
     copy.append(label, h3, p, button); card.append(stage, copy); $('#video-card').append(card);
   }
   const previews = items.filter(item => !item.locked && (item.mockup || item.preview) && item.module === 'Calendarios 2027');
@@ -168,7 +168,7 @@ $('#payment-contact').onclick = () => {
   if (config.demoMode || !config.whatsappContact) { showInfo('Contacto de demostración', 'El número de WhatsApp todavía no está configurado. No realices pagos a los datos de ejemplo.'); return; }
   const phone = String(config.whatsappContact).replace(/\D/g, '');
   if (!/^\d{8,15}$/.test(phone)) { showInfo('Contacto no disponible', 'El número de contacto se está actualizando.'); return; }
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Hola, quiero información sobre mi acceso a los calendarios 2027.')}`, '_blank', 'noopener,noreferrer');
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Hola, quiero confirmar el pago de mi paquete de 50 calendarios 2027 para recibir los 40 restantes.')}`, '_blank', 'noopener,noreferrer');
 };
 (async () => {
   try {
